@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iterator>
 #include <vector>
 
@@ -13,14 +14,9 @@ void backtrack(vector<int> nums, vector<int> track)
     }
 
     for (int i = 0;i < nums.size();++i) {
-        bool continued = false;
-
-        for (auto d : track) {
-            if (d == nums[i]) {
-                continued = true;
-            }
-        }
-        if (continued) continue;
+        if (std::find(track.begin(), track.end(), nums[i]) \
+                == track.end())
+            continue;
 
         track.push_back(nums[i]);
         backtrack(nums, track);
