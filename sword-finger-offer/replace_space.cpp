@@ -5,7 +5,6 @@ Input:
 Output:
 "A%20B" */
 
-#include <exception>
 #include <string>
 
 using std::string;
