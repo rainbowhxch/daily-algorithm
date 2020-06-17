@@ -14,7 +14,7 @@ bool regex_match(int i, int j)
 
     fir_match = (j < text.size()) && (regex[i] == text[j] || regex[i] == '.');
     if (i <= regex.size() - 2 && regex[i + 1] == '*')
-      res = regex_match(i + 2, j) || (regex_match(i, j + 1) && fir_match);
+	res = regex_match(i + 2, j) || (regex_match(i, j + 1) && fir_match);
     else
         res = regex_match(i+1, j+1);
 
