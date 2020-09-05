@@ -8,12 +8,12 @@ using std::list;
 class Bucket {
 	public:
 		void insert(int key) {
-			if (exists(key))
+			if (!exists(key))
 				_data.insert(_data.begin(), key);
 		}
 
 		void remove(int key) {
-			if (!exists(key))
+			if (exists(key))
 				_data.remove(key);
 		}
 
